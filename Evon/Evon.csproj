@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B1EC959-7338-4925-BB84-ECB96A81CE00}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Evon</RootNamespace>
+    <AssemblyName>Evon</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Evon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ColorPicker" />
+    <Reference Include="FluxAPI" />
+    <Reference Include="KrnlAPI" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.WebView2.Core" />
+    <Reference Include="Microsoft.Web.WebView2.Wpf" />
+    <Reference Include="Newtonsoft.Json" />
+    <Reference Include="Oxygen\u0020API" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="MaterialDesignThemes.Wpf" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Apis\Apis.2.cs" />
+    <Compile Include="Classes\Apis\APIs.cs" />
+    <Compile Include="Costura\AssemblyLoader.cs" />
+    <Compile Include="Editor\WebView.cs" />
+    <Compile Include="Encryption.cs" />
+    <Compile Include="Evon_ProcessedByFody.cs" />
+    <Compile Include="Executor.xaml.cs">
+      <DependentUpon>Executor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Intro.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TabEdit.xaml.cs">
+      <DependentUpon>TabEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tools\Extensions.cs" />
+    <Compile Include="tools\Pipes\Pipe.cs" />
+    <Compile Include="tools\ProcessTools\Watcher.cs" />
+    <Compile Include="UserControls\GameRectangle.xaml.cs">
+      <DependentUpon>GameRectangle.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Costura\colorpicker\dll.compressed" />
+    <EmbeddedResource Include="Costura\costura\dll.compressed" />
+    <EmbeddedResource Include="Costura\costura\pdb.compressed" />
+    <EmbeddedResource Include="Costura\fluxapi\dll.compressed" />
+    <EmbeddedResource Include="Costura\krnlapi\dll.compressed" />
+    <EmbeddedResource Include="Costura\materialdesigncolors\dll.compressed" />
+    <EmbeddedResource Include="Costura\materialdesigncolors\pdb.compressed" />
+    <EmbeddedResource Include="Costura\materialdesignthemes\wpf\dll.compressed" />
+    <EmbeddedResource Include="Costura\materialdesignthemes\wpf\pdb.compressed" />
+    <EmbeddedResource Include="Costura\metadata" />
+    <EmbeddedResource Include="Costura\microsoft\web\webview2\core\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\web\webview2\winforms\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\web\webview2\wpf\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\xaml\behaviors\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\xaml\behaviors\pdb.compressed" />
+    <EmbeddedResource Include="Costura\newtonsoft\json\dll.compressed" />
+    <EmbeddedResource Include="Costura\oxygen api\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\diagnosticsource\dll.compressed" />
+    <EmbeddedResource Include="Costura\wearedevs_api\dll.compressed" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Executor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="introscreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\GameRectangle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="evondiscord_logo.ico" />
+    <Resource Include="evondiscord_logo.png" />
+    <Resource Include="evonlogo.ico" />
+    <Resource Include="graphics\fonts\atkinsonhyperlegible-bold.ttf" />
+    <Resource Include="graphics\fonts\atkinsonhyperlegible-bolditalic.ttf" />
+    <Resource Include="graphics\fonts\atkinsonhyperlegible-italic.ttf" />
+    <Resource Include="graphics\fonts\atkinsonhyperlegible-regular.ttf" />
+    <Resource Include="graphics\fonts\font awesome 5 free-solid-900.otf" />
+    <Resource Include="graphics\fonts\poppins-black.otf" />
+    <Resource Include="graphics\fonts\poppins-bold.otf" />
+    <Resource Include="graphics\fonts\poppins-extrabold.otf" />
+    <Resource Include="graphics\fonts\poppins-extralight.otf" />
+    <Resource Include="graphics\fonts\poppins-light.otf" />
+    <Resource Include="graphics\fonts\poppins-medium.otf" />
+    <Resource Include="graphics\fonts\poppins-regular.otf" />
+    <Resource Include="graphics\fonts\poppins-semibold.otf" />
+    <Resource Include="graphics\fonts\poppins-thin.otf" />
+    <Resource Include="graphics\logos\evonlogo.png" />
+    <Resource Include="graphics\logos\evonlogoe.png" />
+    <Resource Include="prj1kcjg.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
